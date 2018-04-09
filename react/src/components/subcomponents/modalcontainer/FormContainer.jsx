@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import SingleInput from '../components/SingleInput';
-import Select from '../components/Select';
-import DisForm from '../components/details';
-import SingleInputEmail from '../components/email';
-import SingleInputPassword from '../components/password';
-import SingleInputPhoneNumber from '../components/phoneNumber';
+import SingleInput from '../modalcomponents/SingleInput';
+import Select from '../modalcomponents/Select';
+import DisForm from '../modalcomponents/details';
+import SingleInputEmail from '../modalcomponents/email';
+import SingleInputPassword from '../modalcomponents/password';
+import SingleInputPhoneNumber from '../modalcomponents/phoneNumber';
 
 
 class FormContainer extends Component {

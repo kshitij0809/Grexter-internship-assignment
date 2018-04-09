@@ -20,7 +20,11 @@ class Modal extends React.Component {
         <h4 class="modal-title">Modal Header</h4>
         </div>
         <div class="modal-body">
-        <p>Some text in the modal.</p>
+        <p>
+          <div>
+          <FormContainer/>
+          </div>
+        </p>
         </div>
         <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

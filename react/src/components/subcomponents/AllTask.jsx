@@ -9,77 +9,87 @@ import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Glyphicon } from 'react-bo
 
 import './AllTask.css';
 
-
+import Modal from './Modal'
 
  class Udemy extends Component {
   constructor (props, context) {
     super(props, context)
     this.state = {
-      mappedMainEvents: []
+      mappedMainEvents: [],
+
     }
+   
     // this.Bplanincreasehorizontalline = this.Bplanincreasehorizontalline.bind(this);
     // this.renderclick = this.renderclick.bind(this);
   }
-  componentDidMount () {
-    axios
-            .get('https://api.myjson.com/bins/1a4wyz')
-            .then(response => {
-              // console.log(response.data)
-              this.setState({ mappedMainEvents: response.data })
-             
-            })
-            .catch(error => {
-              console.log(error)
-            })  
 
-    // this.setState({ mappedMainEvents: [{
-    // title:'KSHITIJ',
-    // tagline:'IIT ROORKEE STUDENT',
-    // short_description:"Events are a great way to create awareness, amass knowledge and generate interest in topics while having some fun, all through the competitive spirit. The Summit brings to you a wide ",  
-    // image:"{iitrLogo}",
-    // website_url:'Kshitijpratapme.000webhostapp.com',
-    // end_point:"END"
-    // },
-    // {
-    // title:'KSHITIJ',
-    // tagline:'IIT ROORKEE STUDENT',
-    // short_description:"Events are a great way to create awareness, amass knowledge and generate interest in topics while having some fun, all through the competitive spirit. The Summit brings to you a wide ",  
-    // image:"{iitrLogo}",
-    // website_url:'Kshitijpratapme.000webhostapp.com',
-    // end_point:"END"
-    // },
-    // {
-    // title:'KSHITIJ',
-    // tagline:'IIT ROORKEE STUDENT',
-    // short_description:"Events are a great way to create awareness, amass knowledge and generate interest in topics while having some fun, all through the competitive spirit. The Summit brings to you a wide ",  
-    // image:"{iitrLogo}",
-    // website_url:'Kshitijpratapme.000webhostapp.com',
-    // end_point:"END"
-    // },
-    // {
-    // title:'KSHITIJ',
-    // tagline:'IIT ROORKEE STUDENT',
-    // short_description:"Events are a great way to create awareness, amass knowledge and generate interest in topics while having some fun, all through the competitive spirit. The Summit brings to you a wide ",  
-    // image:"{iitrLogo}",
-    // website_url:'Kshitijpratapme.000webhostapp.com',
-    // end_point:"END"
-    // },
-    // {
-    // title:'KSHITIJ',
-    // tagline:'IIT ROORKEE STUDENT',
-    // short_description:"Events are a great way to create awareness, amass knowledge and generate interest in topics while having some fun, all through the competitive spirit. The Summit brings to you a wide ",  
-    // image:"{iitrLogo}",
-    // website_url:'Kshitijpratapme.000webhostapp.com',
-    // end_point:"END"
-    // },
-    // {
-    // title:'KSHITIJ',
-    // tagline:'IIT ROORKEE STUDENT',
-    // short_description:"Events are a great way to create awareness, amass knowledge and generate interest in topics while having some fun, all through the competitive spirit. The Summit brings to you a wide ",  
-    // image:"{iitrLogo}",
-    // website_url:'Kshitijpratapme.000webhostapp.com',
-    // end_point:"END"
-    // }]});
+
+  componentDidMount () {
+    // axios
+    //         .get('https://api.myjson.com/bins/1a4wyz')
+    //         .then(response => {
+    //           // console.log(response.data)
+    //           this.setState({ mappedMainEvents: response.data })
+             
+    //         })
+    //         .catch(error => {
+    //           console.log(error)
+    //         })  
+
+    this.setState({ mappedMainEvents: [{
+    title:'KSHITIJ',
+    tagline:'IIT ROORKEE STUDENT',
+    short_description:"all through the competitive spirit. The Summit brings to you a wide ",  
+    image:"{iitrLogo}",
+    website_url:'Kshitijpratapme.000webhostapp.com',
+    end_point:"END",
+    
+    },
+    {
+    title:'KSHITIJ',
+    tagline:'IIT ROORKEE STUDENT',
+    short_description:"all through the competitive spirit. The Summit brings to you a wide ",  
+    image:"{iitrLogo}",
+    website_url:'Kshitijpratapme.000webhostapp.com',
+    end_point:"END",
+    
+    },
+    {
+    title:'KSHITIJ',
+    tagline:'IIT ROORKEE STUDENT',
+    short_description:"all through the competitive spirit. The Summit brings to you a wide ",  
+    image:"{iitrLogo}",
+    website_url:'Kshitijpratapme.000webhostapp.com',
+    end_point:"END",
+    
+    },
+    {
+    title:'KSHITIJ',
+    tagline:'IIT ROORKEE STUDENT',
+    short_description:"all through the competitive spirit. The Summit brings to you a wide ",  
+    image:"{iitrLogo}",
+    website_url:'Kshitijpratapme.000webhostapp.com',
+    end_point:"END",
+    
+    },
+    {
+    title:'KSHITIJ',
+    tagline:'IIT ROORKEE STUDENT',
+    short_description:"all through the competitive spirit. The Summit brings to you a wide ",  
+    image:"{iitrLogo}",
+    website_url:'Kshitijpratapme.000webhostapp.com',
+    end_point:"END",
+    
+    },
+    {
+    title:'KSHITIJ',
+    tagline:'IIT ROORKEE STUDENT',
+    short_description:"all through the competitive spirit. The Summit brings to you a wide ",  
+    image:"{iitrLogo}",
+    website_url:'Kshitijpratapme.000webhostapp.com',
+    end_point:"END",
+    
+    }]});
   }
   // renderclick(){
   //   window.href("")
@@ -100,10 +110,11 @@ import './AllTask.css';
           <div key={key}>
             
               <MainEventTemp
-                name={event.deviceId}
-                short={event.previousData}
-                long={event.updatedData}
-                websiteUrl={event.createdAt}
+                name={event.title}
+                short={event.tagline}
+                long={event.short_description}
+                websiteUrl={event.image}
+               
                             />
                             
           </div>
@@ -116,8 +127,28 @@ import './AllTask.css';
 
 class MainEventTemp extends Component {
   constructor (props) {
-    super(props)
+    super(props);
+    
+    // this.state = {}
+    // this.toggleModal=this.toggleModal.bind(this);
   }
+
+  //  toggleModal() {
+  // 	alert("hello");
+  //   this.setState({
+  //     isOpen: !this.state.isOpen
+  //   });
+  // }
+
+// show(){
+//     this.setState({show: true})
+//   }
+
+//   close(){
+//     this.setState({show: false})
+//   }
+
+
 
   render () {
     var compname = this.props.name;
@@ -135,6 +166,9 @@ class MainEventTemp extends Component {
                <div>{this.props.long}</div>
                <div>{this.props.websiteUrl}</div>
               </div>
+             
+           <Modal/>
+			   
             </div>            
          
       

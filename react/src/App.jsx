@@ -7,14 +7,14 @@ class App extends Component {
   render() {
     return (
         <div>
-          <div class="table-responsive">          
-            <table class="table">
+          <div className="table-responsive">          
+            <table className="table table-bordered table-dark">
               <thead>
                 <tr>
-                  <th>All Tasks</th>
-                  <th>Tasks To Do</th>
-                  <th>Progress</th>
-                  <th>Commpleted</th>
+                  <th >All Tasks</th>
+                  <th >Tasks To Do</th>
+                  <th >Progress</th>
+                  <th >Commpleted</th>
                   
                 </tr>
               </thead>

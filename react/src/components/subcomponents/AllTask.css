@@ -28,7 +28,7 @@ h3 {
     border-radius: 0.5em;
     padding: 50px;
     width: 23vw;
-    margin: 63px;
+    margin: 20px;
 }
 
 /* On mouse-over, add a deeper shadow */
@@ -100,4 +100,13 @@ h3 {
 .main-events-grid{
   border-left-width: 2px;
   border-left-color: #d8d8d8
+}
+
+@media (min-width: 1200px)
+{.container {
+    width: 6vw;
+}}
+
+.width-column{
+	width: 6vw;
 }

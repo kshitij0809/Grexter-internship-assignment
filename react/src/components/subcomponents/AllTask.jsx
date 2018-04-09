@@ -93,10 +93,9 @@ import './AllTask.css';
   //  }
   render () {
     return (
-      <div>
+      <div className="width-column">
         
-         <Grid className='main-events-grid fluid-event-landing'>
-             <Row className='main-event-row container'>
+        
         {this.state.mappedMainEvents.map((event, key) => (
           <div key={key}>
             
@@ -109,8 +108,7 @@ import './AllTask.css';
                             
           </div>
                 ))}
-        </Row>
-            </Grid>
+        
       </div>
     )
   }
@@ -130,14 +128,14 @@ class MainEventTemp extends Component {
        
   
             
-            <Col md={4} sm={4} xs={4} className="card">
+            <div className="card">
               <div className='main-event'>
                <div>{this.props.name}</div>
                <div>{this.props.short}</div>
                <div>{this.props.long}</div>
                <div>{this.props.websiteUrl}</div>
               </div>
-            </Col>            
+            </div>            
          
       
     )
